@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
+
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-image {
+    background-image: url("assets/bg1.png");
+    height: 100%;
+
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+.elements {
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+
+    font-family: "Funnel Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    z-index: 2;
+}
+
+.bg-text {
+    filter: drop-shadow(2px);
+    color: white;
+    justify-content: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bg-text h1 {
+    font-size: 32px;
+    margin: 8px 0;
+    margin-bottom: 12px;
+}
+.bg-text p1 {
+    margin-bottom: 12px;
+}
+.pfp {
+    background-image: url("assets/pfp_herta.jpg");
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 100px;
+    
+    border: 1px solid rgb(180, 34, 233);
+
+    margin-bottom: 12px;
+}
+
+
+@keyframes color-hover-fade-in {
+    100% {
+        color: rgb(185, 68, 227);
+    }
+}
+
+@keyframes color-hover-fade-out {
+    100% {
+        color: rgb(125, 20, 69);
+    }
+}
+
+
+.contacts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contacts ul {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+.contacts ul li {
+    list-style-type: none;
+}
+
+.contacts ul li a,
+.contacts ul li a:link,
+.contacts ul li a:visited,
+.contacts ul li a:hover,
+.contacts ul li a:active,
+.contacts ul li a:focus {
+    color: rgb(125, 20, 69); /* or white as the base */
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    animation: color-hover-fade-out 0.3s forwards;
+}
+
+
+.contacts ul li a:hover {
+    animation: color-hover-fade-in 0.3s forwards;
+}
+#shooting-stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
