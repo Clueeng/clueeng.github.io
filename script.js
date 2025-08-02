@@ -51,6 +51,31 @@ function drawStars() {
     requestAnimationFrame(drawStars);
 }
 
+document.querySelectorAll('.carousel').forEach(carousel => {
+    const imageContainer = carousel.querySelector('.carousel-images');
+    const images = carousel.querySelectorAll('img');
+    const leftBtn = carousel.querySelector('.carousel-btn.left');
+    const rightBtn = carousel.querySelector('.carousel-btn.right');
+    let index = 0;
+
+    function updateCarousel() {
+        const offset = -index * 350; // 350px = image width
+        imageContainer.style.transform = `translateX(${offset}px)`;
+    }
+
+    leftBtn.addEventListener('click', () => {
+        index = (index - 1 + images.length) % images.length;
+        updateCarousel();
+    });
+
+    rightBtn.addEventListener('click', () => {
+        index = (index + 1) % images.length;
+        updateCarousel();
+    });
+
+    updateCarousel();
+});
+
 drawStars();
 
 window.addEventListener("resize", () => {

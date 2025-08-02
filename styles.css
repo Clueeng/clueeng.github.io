@@ -134,3 +134,113 @@ body, html {
     height: 100%;
     pointer-events: none;
 }
+.contact-expand-wrapper {
+    width: 100%;
+    overflow: hidden;
+    transition: max-height 0.6s ease;
+    max-height: 40px; 
+}
+
+.contact-expand-wrapper:hover {
+    max-height: 300px;
+}
+
+.expand-trigger {
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.contacts {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+
+    max-width: 400px;
+    max-height: 300px;
+    overflow-y: auto;
+    word-wrap: break-word;
+}
+
+.contact-expand-wrapper:hover .contacts {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.contacts ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.contacts p1 {
+    margin: 10px auto;
+    font-size: larger;
+}
+
+.contacts li {
+    margin: 6px 0;
+}
+
+.contacts li a {
+    color: rgb(125, 20, 69);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contacts li a:hover {
+    color: rgb(185, 68, 227);
+}
+
+.contacts img {
+    width: 350px;
+    height: auto; 
+    border-radius: 8px;
+    margin-top: 8px;
+}
+.carousel {
+    position: relative;
+    width: 350px;
+    overflow: hidden;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.4s ease;
+    width: 100%;
+}
+
+.carousel-images img {
+    width: 350px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.carousel-btn {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 4px 8px;
+    cursor: pointer;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-btn.left {
+    left: 4px;
+}
+
+.carousel-btn.right {
+    right: 4px;
+}
