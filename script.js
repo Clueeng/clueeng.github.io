@@ -19,7 +19,6 @@ function createStar() {
     };
 }
 
-// Generate stars once
 for (let i = 0; i < 50; i++) {
     stars.push(createStar());
 }
@@ -59,7 +58,7 @@ document.querySelectorAll('.carousel').forEach(carousel => {
     let index = 0;
 
     function updateCarousel() {
-        const offset = -index * 350; // 350px = image width
+        const offset = -index * 350; 
         imageContainer.style.transform = `translateX(${offset}px)`;
     }
 
@@ -82,7 +81,6 @@ window.addEventListener("resize", () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    // Recreate stars for new screen size
     stars = [];
     for (let i = 0; i < 150; i++) {
         stars.push(createStar());
